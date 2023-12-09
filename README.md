@@ -59,6 +59,12 @@ Return the value of the front element of the queue
 
 Return the value of the back element of the queue
 
+```lua
+:each() :(queue, i) -> (i, v)
+```
+
+Return an iterator function to iterate over the elements of the queue.
+
 Please note that this queue won't `Overflow`, but it may `Underflow`. If you want to avoid overflow, you can call `Queue:full()` method to check if the queue is full.
 
 ## Usage Example

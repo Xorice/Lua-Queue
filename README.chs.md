@@ -58,6 +58,12 @@ Queue.new(QueueLength :number?)
 
 返回队列尾部元素的值
 
+```lua
+:each() :(queue, i) -> (i, v)
+```
+
+返回一个迭代器函数，用于遍历队列的元素
+
 请注意，此队列不会发生上溢（Overflow），但可能会发生下溢（Underflow）。如果想要避免溢出，您可以调用 `Queue:full()` 方法来检查队列是否已满。
 
 ## 用法示例
