@@ -5,9 +5,11 @@ Using `Queue` in Lua
 
 ## Attentions
 
-This queue won't `Overflow` but `Underflow`
+* This queue won't `Overflow` but `Underflow`
 
 If you want to avoid overflow, you have to call `Queue:full()`
+
+* The default length of a Queue is `16`
 
 ## APIs
 

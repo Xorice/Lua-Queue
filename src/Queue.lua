@@ -42,7 +42,7 @@ local function new_queue(size)
         head = 0;
         tail = 0;
         data = table.create(size);
-        
+
         _size = 0;
         _queue_size = size;
     };
