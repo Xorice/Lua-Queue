@@ -29,6 +29,12 @@ Queue.new(QueueLength :number?)
 移除队列的头部元素
 
 ```lua
+:popTail()
+```
+
+移除队列的尾部元素
+
+```lua
 :size() :number
 ```
 

@@ -83,6 +83,15 @@ function Queue:pop()
     rawset(self, STR_SIZE, size - 1);
 end
 
+function Queue:popTail()
+    if self:empty() then error(ERR_UNDERFLOW) end;
+    local tail = rawget(self, STR_TAIL);
+    local size = rawget(self,STR_SIZE);
+    local qsize = rawget(self, STR_QSIZE);
+    rawset(self, STR_TAIL, (tail - 1) % qsize);
+    rawset(self, STR_SIZE, size - 1);
+end
+
 function Queue:size()
     return rawget(self,STR_SIZE);
 end

@@ -32,6 +32,12 @@ Add an element to the end of the queue
 Remove the head element of the queue
 
 ```lua
+:popTail()
+```
+
+Remove the tail element of the queue
+
+```lua
 :size() :number
 ```
 
