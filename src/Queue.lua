@@ -55,8 +55,8 @@ local function _iter(q, i)
     local head = rawget(q, STR_HEAD);
     local tail = head + size;
 
-    if i == tail then return nil end;
-    return i+1, rawget(q, STR_DATA)[(i%qsize)+1];
+    if i+head == tail then return nil end;
+    return i+1, rawget(q, STR_DATA)[((i+head)%qsize)+1];
 end
 
 function Queue:push(element)
@@ -116,7 +116,18 @@ function Queue:back()
 end
 
 function Queue:each()
-    return _iter, self, rawget(self, STR_HEAD);
+    return _iter, self, 0;
+end
+
+function Queue:clean()
+    self._size = 0;
+    self.head = 0;
+    self.tail = 0;
+
+    local data = rawget(self, STR_DATA)
+    local size = rawget(self, STR_QSIZE);
+    data[1] = nil;
+    data[size] = nil;
 end
 
 return {new = new_queue};
